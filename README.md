@@ -6,7 +6,9 @@ The command creates a directory and changes into it.
 ## Install
 
 Download or copy this folder to any Windows machine.
-Open PowerShell in the folder and run:
+Double-click `Install.cmd` for a one-click installation.
+
+Alternatively, open PowerShell in the folder and run:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass

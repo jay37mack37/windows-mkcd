@@ -1,5 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $projectDirectory = $PSScriptRoot
+$originalLocation = Get-Location
 $testRoot = Join-Path ([System.IO.Path]::GetTempPath()) ('windows-mkcd-' + [guid]::NewGuid())
 $testProfile = Join-Path $testRoot 'profile.ps1'
 $testDirectory = Join-Path $testRoot 'directory with spaces'
@@ -37,5 +38,6 @@ try {
 finally {
     Set-Location ([System.IO.Path]::GetTempPath())
     Remove-Item -LiteralPath $testRoot -Recurse -Force -ErrorAction SilentlyContinue
+    Set-Location $originalLocation
     Remove-Variable ExistingProfileContent -Scope Global -ErrorAction SilentlyContinue
 }
